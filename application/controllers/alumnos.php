@@ -55,7 +55,14 @@ class alumnos extends CI_Controller
      }
 	 function ValidaCampos(){
 		/*Campos para validar que no esten vacio los campos*/
-		 $this->form_validation->set_rules("codigo_alumno", "codigo_alumno", "trim|required");
+		 $this->form_validation->set_rules("codigo_alumno", "codigo_alumno", "trim|required|valid_codigo_alumno");
+		 $this->form_validation->set_rules("dni", "dni", "trim|required");
+		 $this->form_validation->set_rules("correo", "correo", "trim|required");
+		 $this->form_validation->set_rules("nombres", "nombres", "trim|required");
+		 $this->form_validation->set_rules("apellidos", "apellidos", "trim|required");
+		 $this->form_validation->set_rules("carrera_profesional", "carrera_profesional", "trim|required");
+		 $this->form_validation->set_rules("sexo", "sexo", "trim|required");
+		 $this->form_validation->set_rules("estado", "estado", "callback_select_estado");
 		
 	 }
 	 function select_tipo($campo)
