@@ -5,4 +5,4 @@ table asistencia
  fecha_Registro varchar(200)
 );
 
-INSERT INTO `menu_sistema` (`ID`, `DESCRIPCION`, `IMAGEN`, `URL`, `ORDENAMIENTO`, `ESTATUS`) VALUES (NULL, 'Registrar Asistencia', 'imagenes/not_found.png', '/asistencia', '5', '0');
+INSERT INTO `menu_sistema` (`ID`, `DESCRIPCION`, `IMAGEN`, `URL`, `ORDENAMIENTO`, `ESTATUS`) VALUES (NULL, 'Registrar Asistencia', 'imagenes/not_found.png', '/asistencia', '6', '0');
