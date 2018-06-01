@@ -6,7 +6,7 @@ class model_alumnos extends CI_Model {
 	}
 	public function ExisteEmail($email){
           $this->db->from('alumnos');
-          $this->db->where('correo',$email);
+          $this->db->where('codigo_alumno',$email);
           return $this->db->count_all_results();
      }
      public function SaveAlumnos($arrayCliente){
