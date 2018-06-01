@@ -1,0 +1,8 @@
+table asistencia
+( 
+ id_asistencia int auto_increment primary key,
+ id_alumno int ,
+ fecha_Registro varchar(200)
+);
+
+INSERT INTO `menu_sistema` (`ID`, `DESCRIPCION`, `IMAGEN`, `URL`, `ORDENAMIENTO`, `ESTATUS`) VALUES (NULL, 'Registrar Asistencia', 'imagenes/not_found.png', '/asistencia', '5', '0');

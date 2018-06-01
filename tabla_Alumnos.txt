@@ -8,7 +8,6 @@ apellidos varchar(200),
 carrera_profesional varchar(200),
 sexo varchar(10),
 estado varchar(50),
-
 );
 
 //tabla menu sistema
