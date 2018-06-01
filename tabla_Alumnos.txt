@@ -12,6 +12,6 @@ estado varchar(50),
 );
 
 //tabla menu sistema
-INSERT INTO `menu_sistema` (`ID`, `DESCRIPCION`, `IMAGEN`, `URL`, `ORDENAMIENTO`, `ESTATUS`) VALUES (NULL, 'Listar Alumnos', 'imagenes/not_found.png', '/usuarios', '4', '0');
+INSERT INTO `menu_sistema` (`ID`, `DESCRIPCION`, `IMAGEN`, `URL`, `ORDENAMIENTO`, `ESTATUS`) VALUES (NULL, 'Listar Alumnos', 'imagenes/not_found.png', '/alumnos', '4', '0');
 
-INSERT INTO `menu_sistema` (`ID`, `DESCRIPCION`, `IMAGEN`, `URL`, `ORDENAMIENTO`, `ESTATUS`) VALUES (NULL, 'Agregar Alumnos', 'imagenes/not_found.png', '/alumnos', '5', '0');
+INSERT INTO `menu_sistema` (`ID`, `DESCRIPCION`, `IMAGEN`, `URL`, `ORDENAMIENTO`, `ESTATUS`) VALUES (NULL, 'Agregar Alumnos', 'imagenes/not_found.png', '/alumnos/nuevo', '5', '0');
