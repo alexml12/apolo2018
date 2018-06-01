@@ -1,0 +1,21 @@
+create table ALUMNOS(
+id_alumno int auto_increment primary key,
+codigo_alumno varchar(200),
+dni varchar(8),
+correo varchar(200),
+nombres varchar(200),
+apellidos varchar(200),
+carrera_profesional varchar(200),
+sexo varchar(10),
+estado varchar(50),
+contraseña varchar(200)
+);
+INSERT INTO `alumnos` (`id_alumno`, `codigo_alumno`, `dni`, `correo`, `nombres`, `apellidos`, `carrera_profesional`, `sexo`, `estado`, `contraseña`) VALUES (NULL, '201210399K', '48802609', 'alexml_12@hotmail.com', 'alexnader', 'valdez flores', 'ing. de sistemas e informatica', 'masculino', '0', MD5('1234'));
+
+
+
+
+//tabla menu sistema
+INSERT INTO `menu_sistema` (`ID`, `DESCRIPCION`, `IMAGEN`, `URL`, `ORDENAMIENTO`, `ESTATUS`) VALUES (NULL, 'Listar Alumnos', 'imagenes/not_found.png', '/usuarios', '4', '0');
+
+INSERT INTO `menu_sistema` (`ID`, `DESCRIPCION`, `IMAGEN`, `URL`, `ORDENAMIENTO`, `ESTATUS`) VALUES (NULL, 'Agregar Alumnos', 'imagenes/not_found.png', '/alumnos', '5', '0');
