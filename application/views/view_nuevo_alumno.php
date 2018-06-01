@@ -117,25 +117,22 @@
 	
 
 	$sexo = array(
-	'name'        => 'sexo',
-	'id'          => 'sexo',
-	'size'        => 50,
-	'value'		  => set_value('sexo',@$datos_usuarios[0]->sexo),
-	'placeholder' => 'Sexo',
-	'type'        => 'text',
+	'NONE'   => '---ELIJA SU GENERO---',
+	'Masculino'	    => 'Masculino',
+	'Femenino'      => 'Femenino',
 	);
 	echo '<tr>';
 	echo '<td>'.form_label("Sexo:",'sexo').'</td>';
 	echo '<td>';
-	echo form_input($sexo);
+	echo  form_dropdown('sexo', $sexo, set_value('sexo',@$datos_usuarios[0]->sexo));
 	echo '</td>';
 	echo '<td><font color="red">'.form_error('sexo').'</font></td>';
-	echo '</tr>';
+	echo '</tr>'; 
 
 	
 	
 	$Estatus = array(
-	'NONE'   => '---SELECCaIONE ESTADO---',
+	'NONE'   => '---SELECCIONE ESTADO---',
 	'0'	     => 'Activo',
 	'1'      => 'Inactivo',
 	);
