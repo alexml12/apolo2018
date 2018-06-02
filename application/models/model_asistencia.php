@@ -1,46 +1,46 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class model_alumnos extends CI_Model {
-	public function ListarAlumnos(){
-		$this->db->order_by('id_alumno ASC');
-		return $this->db->get('alumnos')->result();
+class model_asistencia extends CI_Model {
+	public function ListarComensales(){
+		
+		$this->db->select('a.*,asis.*');
+    	$this->db->from('alumnos a');
+    	$this->db->join('asistencia asis', 'a.codigo_alumno = asis.codigo_alumno');
+
+   		$aResult = $this->db->get();
+
+    	if(!$aResult->num_rows() == 1)
+    	{
+        return false;
+    	}
+    	return $aResult->result_array();
 	}
 	public function ExisteEmail($email){
           $this->db->from('alumnos');
           $this->db->where('codigo_alumno',$email);
           return $this->db->count_all_results();
      }
-     public function SaveAlumnos($arrayCliente){
-     	/*Nos aseguramos si realizamos todo o no
+     public function Save($arrayCliente){
+     	/*Nos aseguramos si realizamos todo o no*/
      	$this->db->trans_start();
-     	$this->db->insert('alumnos', $arrayCliente);
-     	$this->db->trans_complete();*/
-     	$this->db->select('a.*,d.*');
-    	$this->db->from('entradas a');
-    	$this->db->join('proveedor d', 'a.proveedor = d.id');
-    	$aResult = $this->db->get();
-    	    if(!$aResult->num_rows() == 1)
-    	{
-        	return false;
-    	}
-
-    		return $aResult->result_array();	
+     	$this->db->insert('asistencia', $arrayCliente);
+     	$this->db->trans_complete();	
      }
 	 function BuscarID($id){
 
-		$query = $this->db->where('id_alumno',$id);
+		$query = $this->db->where('codigo_alumno',$id);
 		$query = $this->db->get('alumnos');
 		return $query->result();
 		
 	}
 	function edit($data,$id){
 
-		$this->db->where('id_alumno',$id);
+		$this->db->where('codigo_alumno',$id);
 		$this->db->update('alumnos',$data);
 		
 	}
 	function Eliminar($id){
 
-		$this->db->where('id_alumno',$id);
+		$this->db->where('codigo_alumno',$id);
 		$this->db->delete('alumnos');
 		
 	}

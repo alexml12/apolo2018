@@ -2,37 +2,58 @@
 date_default_timezone_set('America/Mexico_City'); 
 class asistencia extends CI_Controller
 {
+
+     public function __construct()
+     {
+          parent::__construct();
+          //Cargamos el modelo deel controlador
+          $this->load->model('model_asistencia');
+          $this->load->model('model_seguridad');
+          $this->load->model('model_login');
+     }
+     function Seguridad(){
+     	$url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+         $this->model_seguridad->SessionActivo($url);
+     }
+
  public function index(){
           /*Si el usuario esta logeado*/
-          $this->load->view('header');      
-          $this->load->view('view_asistencia');
+          $this->load->view('header');    
+          $data['alumnos'] = $this->model_asistencia->ListarComensales();     
+          $this->load->view('view_asistencia_reporte',$data);
           $this->load->view('footer');
 	}
 
+
     public function nuevo(){
 	      
-        /*Si el usuario esta logeado*/
+  /*Si el usuario esta logeado*/
         $this->Seguridad();
-		$hoy    = date("Y")."-".date("m")."-".date("d")." ".date("H:i:s");
+		$hoy    = date("Y")."-".date("m")."-".date("d");
 				
 		$this->ValidaCampos();
 		if($this->form_validation->run() == TRUE){
 				//Verificamos si existe el email
-			   //$VerifyExist = $this->model_alumnos->ExisteEmail($this->input->post("codigo_alumno"));
-              // if($VerifyExist==0){
+			   $VerifyExist = $this->model_asistencia->ExisteEmail($this->input->post("codigo_alumno"));
+               if($VerifyExist>0){
                	    $UsuariosInsertar = $this->input->post();//Recibimos todo los campos por array nos lo envia codeigther
                	    $UsuariosInsertar["fecha_Registro"] = $hoy;//le agregamos la fecha de registro
                	    //guardamos los registros
-               	    $this->model_alumnos->SaveAlumnos($UsuariosInsertar);
-               	    redirect("alumnos?save=true");
-       
-        }
+               	    $this->model_asistencia->save($UsuariosInsertar);
+               	    redirect("asistencia?save=true");
+               }
+			   if($VerifyExist==0){
+                    $this->session->set_flashdata('msg', '<div class="alert alert-error text-center">El usuario no esta registrado</div>');
+                    $this->load->view('header');
+					$this->load->view('view_asistencia');
+					$this->load->view('footer');
+               }
 			
-		else{
+		}else{
 			  $this->load->view('header');
-			  $this->load->view('view_nuevo_alumno');
+			  $this->load->view('view_asistencia');
 			  $this->load->view('footer');
-		} 
+		}
      }
 
       function ValidaCampos(){

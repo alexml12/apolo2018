@@ -12,7 +12,7 @@
 	  echo '<table border=0>';
 
 
-   	$Codigo	  = array(
+   	$codigo_alumno	  = array(
 	'name'        => 'codigo_alumno',
 	'id'          => 'codigo_alumno',
 	'size'        => 50,
@@ -23,7 +23,7 @@
 	echo '<tr>';
 	echo '<td>'.form_label("Codigo:",'codigo_alumno').'</td>';
 	echo '<td>';
-	echo form_input($Codigo);
+	echo form_input($codigo_alumno);
 	echo '</td>';
 	echo '<td><font color="red">'.form_error('codigo_alumno').'</font></td>';
 	echo '</tr>';
