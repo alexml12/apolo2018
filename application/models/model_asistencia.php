@@ -10,10 +10,20 @@ class model_alumnos extends CI_Model {
           return $this->db->count_all_results();
      }
      public function SaveAlumnos($arrayCliente){
-     	/*Nos aseguramos si realizamos todo o no*/
+     	/*Nos aseguramos si realizamos todo o no
      	$this->db->trans_start();
      	$this->db->insert('alumnos', $arrayCliente);
-     	$this->db->trans_complete();	
+     	$this->db->trans_complete();*/
+     	$this->db->select('a.*,d.*');
+    	$this->db->from('entradas a');
+    	$this->db->join('proveedor d', 'a.proveedor = d.id');
+    	$aResult = $this->db->get();
+    	    if(!$aResult->num_rows() == 1)
+    	{
+        	return false;
+    	}
+
+    		return $aResult->result_array();	
      }
 	 function BuscarID($id){
 

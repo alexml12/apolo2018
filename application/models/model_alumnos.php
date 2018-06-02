@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class model_alumnos extends CI_Model {
 	public function ListarAlumnos(){
-		$this->db->order_by('id_alumno ASC');
+		$this->db->order_by('codigo_alumno ASC');
 		return $this->db->get('alumnos')->result();
 	}
 	public function ExisteEmail($email){
@@ -17,20 +17,20 @@ class model_alumnos extends CI_Model {
      }
 	 function BuscarID($id){
 
-		$query = $this->db->where('id_alumno',$id);
+		$query = $this->db->where('codigo_alumno',$id);
 		$query = $this->db->get('alumnos');
 		return $query->result();
 		
 	}
 	function edit($data,$id){
 
-		$this->db->where('id_alumno',$id);
+		$this->db->where('codigo_alumno',$id);
 		$this->db->update('alumnos',$data);
 		
 	}
 	function Eliminar($id){
 
-		$this->db->where('id_alumno',$id);
+		$this->db->where('codigo_alumno',$id);
 		$this->db->delete('alumnos');
 		
 	}

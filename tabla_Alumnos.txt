@@ -1,13 +1,12 @@
 create table ALUMNOS(
-id_alumno int auto_increment primary key,
-codigo_alumno varchar(200),
+codigo_alumno varchar(200)  primary key,
 dni varchar(8),
 correo varchar(200),
 nombres varchar(200),
 apellidos varchar(200),
 carrera_profesional varchar(200),
 sexo varchar(10),
-estado varchar(50),
+estado varchar(50)
 );
 
 //tabla menu sistema

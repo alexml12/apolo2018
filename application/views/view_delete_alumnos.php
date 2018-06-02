@@ -1,7 +1,7 @@
 <?php
 
 $input_con_id = array(
-              'id_alumno'        => $datos_usuarios[0]->id_alumno,
+              'codigo_alumno'        => $datos_usuarios[0]->codigo_alumno,
             );
 
 ?><div id="container">

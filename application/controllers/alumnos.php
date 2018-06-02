@@ -89,7 +89,7 @@ class alumnos extends CI_Controller
 	}
 	 public function editar($id = NULL){
 		
-		if ($id == NULL OR !is_numeric($id)){
+		if ($id == NULL ){
 			$data['Modulo']  = "Alumnos";
 			$data['Error']   = "Error: El ID <strong>".$id."</strong> No es Valido, Verifica tu Busqueda !!!!!!!";
 			$this->load->view('header');
@@ -120,14 +120,14 @@ class alumnos extends CI_Controller
 				$this->load->view('footer');
 			}else{
 				$this->load->view('header');
-				$this->load->view('view_nuevo_alumno',$data);
+				$this->load->view('view_editar_alumnos',$data);
 				$this->load->view('footer');
 			}
 		}
 		
 	}
 	public function eliminar($id = NULL){
-		if ($id == NULL OR !is_numeric($id)){
+		if ($id == NULL ){
 			$data['Modulo']  = "Alumnos";
 			$data['Error']   = "Error: El ID <strong>".$id."</strong> No es Valido, Verifica tu Busqueda !!!!!!!";
 			$this->load->view('header');
@@ -136,7 +136,7 @@ class alumnos extends CI_Controller
 			return;
 		}
 		if ($this->input->post()) {
-			$id_eliminar = $this->input->post('id_alumno');
+			$id_eliminar = $this->input->post('codigo_alumno');
 			$boton       = strtoupper($this->input->post('btn_guardar'));
 			if($boton=="NO"){
 				redirect("Alumnos");
@@ -160,7 +160,7 @@ class alumnos extends CI_Controller
 		}
 	}
 	public function password($id=NULL){
-		if ($id == NULL OR !is_numeric($id)){
+		if ($id == NULL ){
 			$data['Modulo']  = "Alumnos";
 			$data['Error']   = "Error: El ID <strong>".$id."</strong> No es Valido, Verifica tu Busqueda !!!!!!!";
 			$this->load->view('header');
@@ -209,7 +209,7 @@ class alumnos extends CI_Controller
 	
 	}
 	public function permisos($id = NULL){
-	   if ($id == NULL OR !is_numeric($id)){
+	   if ($id == NULL ){
 			$data['Modulo']  = "Alumnos";
 			$data['Error']   = "Error: El ID <strong>".$id."</strong> No es Valido, Verifica tu Busqueda !!!!!!!";
 			$this->load->view('header');
@@ -218,7 +218,7 @@ class alumnos extends CI_Controller
 			return;
 		}
 		if ($this->input->post()) {
-			    $id              = $this->input->post("id_alumno");
+			    $id              = $this->input->post("codigo_alumno");
 				$permission_data = $this->input->post("permissions")!=false ? $this->input->post("permissions"):array();
 				/*APLICAMOS UPDATE*/
 				$this->model_alumnos->DesactivaPermisos($id);
@@ -236,7 +236,7 @@ class alumnos extends CI_Controller
 					}
 				}
 				/*Si el usuario que se asigno permisos es el que esta logeado entonces refrescamos la sesion*/
-				$IdUserLogin = $this->session->userdata('id_alumno');
+				$IdUserLogin = $this->session->userdata('codigo_alumno');
 				if($IdUserLogin==$id){
 					$Menu = $this->model_login->PermisosMenu($id);
 					$this->session->set_userdata($Menu);

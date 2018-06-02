@@ -23,7 +23,7 @@
 		echo '<tr bgcolor="'.$body.'">';
 		echo '<td>'.form_checkbox("permissions[]",$id_menu[$i],$booleano).' '.$CheckText.'</td>';
 		echo '<td>'.$descripcion_menu[$i].'</td>';
-		echo '<td>'.$id_menu[$i].form_hidden("id_alumno",$datos_usuarios[0]->id_alumno).'</td>';
+		echo '<td>'.$id_menu[$i].form_hidden("codigo_alumno",$datos_usuarios[0]->codigo_alumno).'</td>';
 		echo '</tr>';
 	  }
 	  echo '<tr><td colspan=3><hr/></td></tr>';

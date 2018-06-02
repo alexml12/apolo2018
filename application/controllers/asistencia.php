@@ -18,22 +18,17 @@ class asistencia extends CI_Controller
 		$this->ValidaCampos();
 		if($this->form_validation->run() == TRUE){
 				//Verificamos si existe el email
-			   $VerifyExist = $this->model_alumnos->ExisteEmail($this->input->post("codigo_alumno"));
-               if($VerifyExist==0){
+			   //$VerifyExist = $this->model_alumnos->ExisteEmail($this->input->post("codigo_alumno"));
+              // if($VerifyExist==0){
                	    $UsuariosInsertar = $this->input->post();//Recibimos todo los campos por array nos lo envia codeigther
-               	    //$UsuariosInsertar["FECHA_REGISTRO"] = $hoy;//le agregamos la fecha de registro
+               	    $UsuariosInsertar["fecha_Registro"] = $hoy;//le agregamos la fecha de registro
                	    //guardamos los registros
                	    $this->model_alumnos->SaveAlumnos($UsuariosInsertar);
                	    redirect("alumnos?save=true");
-               }
-			   if($VerifyExist>0){
-                    $this->session->set_flashdata('msg', '<div class="alert alert-error text-center">Código Duplicado</div>');
-                    $this->load->view('header');
-					$this->load->view('view_nuevo_alumno');
-					$this->load->view('footer');
-               }
+       
+        }
 			
-		}else{
+		else{
 			  $this->load->view('header');
 			  $this->load->view('view_nuevo_alumno');
 			  $this->load->view('footer');
