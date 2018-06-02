@@ -29,7 +29,7 @@ class asistencia extends CI_Controller
 	      
   /*Si el usuario esta logeado*/
         $this->Seguridad();
-		$hoy    = date("Y")."-".date("m")."-".date("d");
+		$hoy    = date("d")."-".date("m")."-".date("Y");
 				
 		$this->ValidaCampos();
 		if($this->form_validation->run() == TRUE){
