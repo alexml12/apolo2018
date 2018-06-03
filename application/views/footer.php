@@ -2,7 +2,7 @@
    <hr/>
     <footer>
 <center>
-        <h6> &copy; Desarrollos PHP 2014 Derechos Reservados </h6>
+        <h6> &copy; Desarrollado por JAMES 2018 Todos los Derechos Reservados </h6>
     
    </center>
     </footer>

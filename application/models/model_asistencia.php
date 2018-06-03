@@ -19,6 +19,17 @@ class model_asistencia extends CI_Model {
           $this->db->where('codigo_alumno',$email);
           return $this->db->count_all_results();
      }
+
+    public function ExisteCodAlumnoAsis($email){
+          $this->db->from('asistencia');
+          $this->db->where('codigo_alumno',$email);
+          return $this->db->count_all_results();
+     }
+    public function SeRegistroHoy($codigo_alumno,$email){
+          $this->db->from('asistencia');
+          $this->db->where('codigo_alumno',$codigo_alumno ,'fecha_Registro',$email);
+          return $this->db->count_all_results();
+     }
      public function Save($arrayCliente){
      	/*Nos aseguramos si realizamos todo o no*/
      	$this->db->trans_start();

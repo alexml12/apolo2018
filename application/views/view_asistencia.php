@@ -16,6 +16,7 @@
 	'name'        => 'codigo_alumno',
 	'id'          => 'codigo_alumno',
 	'size'        => 50,
+	'maxlength'   => 11,
 	'value'		  => set_value('codigo_alumno',@$datos_usuarios[0]->codigo_alumno),
 	'placeholder' => 'Codigo Alumno',
 	'type'        => 'text',
