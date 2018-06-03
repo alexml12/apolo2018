@@ -29,6 +29,7 @@ class asistencia extends CI_Controller
         
   /*Si el usuario esta logeado*/
         $this->Seguridad();
+<<<<<<< HEAD
     $hoy    = date("Y")."-".date("m")."-".date("d");
 
     $this->ValidaCampos();
@@ -54,6 +55,23 @@ class asistencia extends CI_Controller
                     else {
                       if($VerifyExist==0){
                     $this->session->set_flashdata('msg', '<div class="alert alert-error text-center">El usuario no esta registrado Registrelo en el sistema</div>');
+=======
+		$hoy    = date("d")."-".date("m")."-".date("Y");
+				
+		$this->ValidaCampos();
+		if($this->form_validation->run() == TRUE){
+				//Verificamos si existe el email
+			   $VerifyExist = $this->model_asistencia->ExisteEmail($this->input->post("codigo_alumno"));
+               if($VerifyExist>0){
+               	    $UsuariosInsertar = $this->input->post();//Recibimos todo los campos por array nos lo envia codeigther
+               	    $UsuariosInsertar["fecha_Registro"] = $hoy;//le agregamos la fecha de registro
+               	    //guardamos los registros
+               	    $this->model_asistencia->save($UsuariosInsertar);
+               	    redirect("asistencia?save=true");
+               }
+			   if($VerifyExist==0){
+                    $this->session->set_flashdata('msg', '<div class="alert alert-error text-center">El usuario no esta registrado</div>');
+>>>>>>> 95c1ef42ce6bdfed569a0134578338f301bfea9d
                     $this->load->view('header');
                     $this->load->view('view_asistencia');
                     $this->load->view('footer');
