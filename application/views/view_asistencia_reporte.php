@@ -53,7 +53,14 @@ if(isset($_GET['permisos'])){
 		 <td><?php echo $alumno['nombres']; ?></td>
 		 <td><?php echo $alumno['apellidos']; ?></td>
 		 <td><?php echo $alumno['sexo']; ?></td>
-		 <td><?php echo $alumno['fecha_Registro']; ?></td>
+		 <td><?php  
+		        $fecha = $alumno['fecha_Registro'];
+		        $ano = substr($fecha, -10, 4);
+		 		$mes = substr($fecha, -5, 2);
+		 		$dia = substr($fecha, -2, 2);
+		 		echo $dia."-".$mes."-".$ano;
+
+		  ?></td>
 
  		</tr>
 <?php 		
