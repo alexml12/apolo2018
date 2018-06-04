@@ -103,20 +103,26 @@
 
 
 	$carrera = array(
-	'name'        => 'carrera_profesional',
-	'id'          => 'carrera_profesional',
-	'size'        => 50,
-	'value'		  => set_value('carrera_profesional',@$datos_usuarios[0]->carrera_profesional),
-	'placeholder' => 'Carrera',
-	'type'        => 'text',
+	'NONE'   => '---SELECCIONE ESTADO---',
+	'ING DE SISTEMAS E INFORMATICA'=> 'ING DE SISTEMAS E INFORMATICA',
+	'ING CIVIL'      => 'ING CIVIL',
+	'ING AMBIENTAL R.N'      => 'ING AMBIENTAL R.N',
+	'ENFERMERIA'      => 'ENFERMERIA',
+	'CONTABILIDAD'      => 'CONTABILIDAD',
+	'AGRONOMIA'      => 'AGRONOMIA',
+	'EDUCACION'      => 'EDUCACION',
+	'TURISMO'      => 'TURISMO',
+	'DERECHO'      => 'DERECHO',
+	'ESTOMATOLOGIA'      => 'ESTOMATOLOGIA',
+
 	);
 	echo '<tr>';
-	echo '<td>'.form_label("Carrera:",'carrera_profesional').'</td>';
+	echo '<td>'.form_label("carrera:",'carrera_profesional').'</td>';
 	echo '<td>';
-	echo form_input($carrera);
+	echo  form_dropdown('carrera_profesional', $carrera, set_value('carrera_profesional',@$datos_usuarios[0]->carrera_profesional));
 	echo '</td>';
 	echo '<td><font color="red">'.form_error('carrera_profesional').'</font></td>';
-	echo '</tr>';
+	echo '</tr>'; 
 	
 
 	$sexo = array(

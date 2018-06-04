@@ -37,6 +37,7 @@ if(isset($_GET['permisos'])){
 <th>NOMBRE</th>
 <th>APELLIDOS</th>
 <th>SEXO</th>
+<th>CARRERA PROFESIONAL</th>
 <th>FECHA DE ASISTENCIA</th>
 </tr>
 </thead>
@@ -53,6 +54,7 @@ if(isset($_GET['permisos'])){
 		 <td><?php echo $alumno['nombres']; ?></td>
 		 <td><?php echo $alumno['apellidos']; ?></td>
 		 <td><?php echo $alumno['sexo']; ?></td>
+		 <td><?php echo $alumno['carrera_profesional']; ?></td>
 		 <td><?php  
 		        $fecha = $alumno['fecha_Registro'];
 		        $ano = substr($fecha, -10, 4);
