@@ -58,9 +58,7 @@ $autoload['libraries'] = array('database', 'session','form_validation');
 /*
 | -------------------------------------------------------------------
 |  Auto-load Helper Files
-$autoload['libraries'] = array('database');
-
-/*-------------------------------------------------------------------
+| -------------------------------------------------------------------
 | Prototype:
 |
 |	$autoload['helper'] = array('url', 'file');
@@ -90,9 +88,9 @@ $autoload['config'] = array();
 |  Auto-load Language files
 | -------------------------------------------------------------------
 | Prototype:
-|*/
-	$autoload['helper'] = array('url');
-/*
+|
+|	$autoload['language'] = array('lang1', 'lang2');
+|
 | NOTE: Do not include the "_lang" part of your file.  For example
 | "codeigniter_lang.php" would be referenced as array('codeigniter');
 |

@@ -50,10 +50,10 @@ if(isset($_GET['permisos'])){
  		echo '<tr>';
 		echo '<td>'
 ?>
-		<a href="<?php echo base_url();?>usuarios/editar/<?php echo $usuario->ID;?>/" class="btn btn-success">Editar</a>
-		<a href="<?php echo base_url();?>usuarios/password/<?php echo $usuario->ID ?>" class="btn btn-default">Password</a>
-		<a href="<?php echo base_url();?>usuarios/permisos/<?php echo $usuario->ID;?>" class="btn btn-info">Permisos</a>
-		<a href="<?php echo base_url();?>usuarios/eliminar/<?php echo $usuario->ID ?>" class="btn btn-danger">Eliminar</a>
+		<a href="<?php echo base_url();?>index.php/usuarios/editar/<?php echo $usuario->ID;?>/" class="btn btn-success">Editar</a>
+		<a href="<?php echo base_url();?>index.php/usuarios/password/<?php echo $usuario->ID ?>" class="btn btn-default">Password</a>
+		<a href="<?php echo base_url();?>index.php/usuarios/permisos/<?php echo $usuario->ID;?>" class="btn btn-info">Permisos</a>
+		<a href="<?php echo base_url();?>index.php/usuarios/eliminar/<?php echo $usuario->ID ?>" class="btn btn-danger">Eliminar</a>
 <?php		
 		echo '</td>';
  		echo '<td>'.$usuario->NOMBRE.'</td>';
