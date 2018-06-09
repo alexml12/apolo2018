@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-06-2018 a las 04:45:00
+-- Tiempo de generación: 09-06-2018 a las 21:12:32
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 5.6.32
 
@@ -49,7 +49,7 @@ INSERT INTO `alumnos` (`codigo_alumno`, `dni`, `correo`, `nombres`, `apellidos`,
 ('082205B', '46063340', 'eltigre@gmail.com', 'pedro', 'quispe', 'ambiental', 'Masculino', '0', '2014-07-30 9:39:06'),
 ('082205C', '46063343', 'ronel345@hotmail.com', 'romel', 'trujillo', 'turismo', 'Masculino', '0', '2014-07-30 10:39:06'),
 ('082205D', '46063344', 'maria22@gmail.com', 'maria', 'mejia', 'civil', 'Femenino', '0', '2014-07-30 14:39:06'),
-('082205Ds', '12', 'ass@hotmail.com', 'alexnaderee', 'as', 'ING CIVIL', 'Masculino', '0', '2018-06-07 15:49:57'),
+('082205Ds', '12223333', 'ass@hotmail.com', 'alexnaderee', 'as', 'ING CIVIL', 'Masculino', '0', '2018-06-07 15:49:57'),
 ('082205E', '46063347', 'liz456@gmail.com', 'lizbeth', 'marin', 'enfermeria', 'Femenino', '0', '2014-07-30 14:39:06'),
 ('082205F', '46063448', 'gh345@gmail.com', 'alejandro', 'zela', 'sistemas', 'Masculino', '0', '2014-07-30 14:39:06'),
 ('082205G', '46063449', 'bris234@hotmail.com', 'brizaida', 'huillca', 'agronomia', 'Femenino', '0', '2014-07-30 14:39:06'),
@@ -71,6 +71,7 @@ INSERT INTO `alumnos` (`codigo_alumno`, `dni`, `correo`, `nombres`, `apellidos`,
 ('201210399K', '12', 'ass@hotmail.com', 'alexnaderee', 'as', 'ING DE SISTEMAS E INFORMATICA', 'Masculino', '0', '2018-06-07 10:57:45'),
 ('2012393', '12345', 'ADSAS@HOTMAIL.COM', 'PRUEBA2', 'AS', 'ing. de sistemas e informatica', 'Masculino', '0', '2014-07-30 14:39:06'),
 ('201239368E', '123343', 'ads@hotmail.com', 'alberto', 'fernandez', 'ing. de sistemas e informatica', 'Masculino', '0', '2014-07-30 14:39:06'),
+('45343F', '12343333', 'ADSAS@HOTMAIL.COM', 'SDEEEED', 'SDEEED', 'ING AMBIENTAL R.N', 'Masculino', '0', '2018-06-09 10:09:50'),
 ('879564213', '12345678', 'maricita@hotmail.com', 'mari', 'guitierrrez', 'ing. de sistemas e informatica', 'Femenino', '0', '2014-07-30 14:39:06');
 
 -- --------------------------------------------------------
@@ -96,7 +97,9 @@ INSERT INTO `asistencia` (`id_asistencia`, `codigo_alumno`, `fecha_Registro`) VA
 (27, '201210399K', '2018-06-07'),
 (30, '201210399K', '2018-06-08'),
 (31, '082205Ds', '2018-06-07'),
-(32, '201210399K', '2018-06-09');
+(32, '201210399K', '2018-06-09'),
+(33, '082205P', '2018-06-09'),
+(34, '45343F', '2018-06-09');
 
 -- --------------------------------------------------------
 
@@ -125,7 +128,8 @@ INSERT INTO `menu_sistema` (`ID`, `DESCRIPCION`, `IMAGEN`, `URL`, `ORDENAMIENTO`
 (5, 'Agregar Alumnos', 'imagenes/not_found.png', 'alumnos/nuevo', 5, 0),
 (6, 'Agregar Asistencia', 'imagenes/not_found.png', 'asistencia/nuevo', 6, 0),
 (7, 'Listar Asistencia', 'imagenes/not_found.png', 'asistencia', 7, 0),
-(8, 'Reportes', 'imagenes/not_found.png', 'reportes', 8, 0);
+(8, 'Reportes Dinamicos', 'imagenes/not_found.png', 'reportes', 8, 0),
+(9, 'Reporte Cantidad', 'imagenes/not_found.png', 'reportes/hm', 8, 0);
 
 -- --------------------------------------------------------
 
@@ -155,7 +159,8 @@ INSERT INTO `permisosmenu` (`ID`, `ID_USUARIO`, `ID_MENU`, `ESTATUS`) VALUES
 (9, 1, 5, 0),
 (10, 1, 6, 0),
 (11, 1, 7, 0),
-(12, 1, 8, 0);
+(12, 1, 8, 0),
+(13, 1, 9, 0);
 
 -- --------------------------------------------------------
 
@@ -224,25 +229,25 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `asistencia`
 --
 ALTER TABLE `asistencia`
-  MODIFY `id_asistencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_asistencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `menu_sistema`
 --
 ALTER TABLE `menu_sistema`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `permisosmenu`
 --
 ALTER TABLE `permisosmenu`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
