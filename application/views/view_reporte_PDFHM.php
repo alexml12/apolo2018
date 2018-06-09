@@ -13,7 +13,7 @@
 <title>Codeigniter y Mysqli</title>
 </head>
 <body>
-  <h3 align="center">UNIVERSIDAD TECNOLOGICA DE LOS ANDES <br/> COMEDOR UNIVERSITARIO
+  <h3 align="center"> <img src="<?php echo base_url();?>imagenes/utea.png" width="10" heigth="15"/>UNIVERSIDAD TECNOLOGICA DE LOS ANDES <br/> COMEDOR UNIVERSITARIO
 <?php 
 $alumnas;
 $alumnos; 

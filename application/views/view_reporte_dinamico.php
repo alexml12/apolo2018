@@ -13,7 +13,9 @@
 <title>Codeigniter y Mysqli</title>
 </head>
 <body>
-	<h3 align="center">UNIVERSIDAD TECNOLOGICA DE LOS ANDES <br/> COMEDOR UNIVERSITARIO</h3>
+
+	<h3 align="center"> <img src="<?php echo base_url();?>imagenes/utea.png" width="10" heigth="15"/> UNIVERSIDAD TECNOLOGICA DE LOS ANDES <br/> REPORTE ASISTENCIA DE COMENSALES</h3>
+
 	<?php
 		if ($this->session->userdata('is_logged_in')){
 				
