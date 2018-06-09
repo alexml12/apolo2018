@@ -30,7 +30,7 @@
                             if($CrearMenu1["ID"]=="Error"){
                                 echo '<td><font color="red">Sin Permisos para el Ver Menu. Solicita los Permisos con un Administrador</font></td>';
                              }else{   
-                                  echo '<td><a href="'.base_url().'index.php'.$CrearMenu1["URL"].'">'.$CrearMenu1["DESCRIPCION"]."</a></td>";
+                                  echo '<td><a href="'.base_url().$CrearMenu1["URL"].'">'.$CrearMenu1["DESCRIPCION"]."</a></td>";
                                   echo '<td>&nbsp;|&nbsp;</td>';
                             }
 			}
