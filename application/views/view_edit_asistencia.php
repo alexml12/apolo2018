@@ -17,6 +17,7 @@
    	$codigo_alumno	  = array(
 	'name'        => 'codigo_alumno',
 	'id'          => 'codigo_alumno',
+	'readonly'    => 'readonly',
 	'size'        => 50,
 	'maxlength'   => 11,
 	'value'		  => set_value('codigo_alumno',@$datos_usuarios[0]->codigo_alumno),
@@ -35,7 +36,7 @@
 	'name'        => 'fecha_Registro',
 	'id'          => 'fecha_Registro',
 	'size'        => 50,
-	'value'		  =>  date("Y-m-d"),
+	'value'		  =>  set_value('fecha_Registro',@$datos_usuarios[0]->fecha_Registro),
 	'placeholder' => 'fecha de asistencia',
 	'type'        => 'date',
 	);

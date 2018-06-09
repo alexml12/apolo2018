@@ -2,7 +2,7 @@
 <script type="text/javascript">
             /*CLIENTES*/
             $(document).ready(function() {
-                $('#alumnos').dataTable( {
+                $('#asistencia').dataTable( {
                     // sDom: hace un espacio entre la tabla y los controles 
                 "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
         
@@ -30,9 +30,11 @@ if(isset($_GET['permisos'])){
 	}
 ?>
 <center>
-<table id="alumnos" border="0" cellpadding="0" cellspacing="0" class="pretty">
+<table id="asistencia" border="0" cellpadding="0" cellspacing="0" class="pretty">
 <thead>
 <tr>
+<th>ACCIONES</th>
+<th>ID</th>
 <th>CODIGO</th>
 <th>NOMBRE</th>
 <th>APELLIDOS</th>
@@ -47,9 +49,15 @@ if(isset($_GET['permisos'])){
  if(!empty($alumnos)){
  	foreach($alumnos as $alumno){
  		echo '<tr>';
-		//echo '<td>'
+		echo '<td>'
 ?>
+		<a href="<?php echo base_url();?>asistencia/editar/<?php echo $alumno['id_asistencia']; ?>" class="btn btn-success">Editar</a>
+		<!--<a href="<?php echo base_url();?>index.php/alumnos/password/<?php echo $alumno->codigo_alumno ?>" class="btn btn-default">Password</a>
+		<a href="<?php echo base_url();?>index.php/alumnos/permisos/<?php echo $alumno->codigo_alumno;?>" class="btn btn-info">Permisos</a> -->
+		<a href="<?php echo base_url();?>asistencia/eliminar/<?php echo $alumno['id_asistencia']; ?>" class="btn btn-danger">Eliminar</a>
 
+
+		<td><?php echo $alumno['id_asistencia']; ?></td>
     	<td><?php echo $alumno['codigo_alumno']; ?></td>
 		 <td><?php echo $alumno['nombres']; ?></td>
 		 <td><?php echo $alumno['apellidos']; ?></td>
