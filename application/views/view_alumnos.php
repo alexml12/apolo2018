@@ -52,10 +52,10 @@ if(isset($_GET['permisos'])){
  		echo '<tr>';
 		echo '<td>'
 ?>
-		<a href="<?php echo base_url();?>index.php/alumnos/editar/<?php echo $alumno->codigo_alumno;?>/" class="btn btn-success">Editar</a>
+		<a href="<?php echo base_url();?>alumnos/editar/<?php echo $alumno->codigo_alumno;?>/" class="btn btn-success">Editar</a>
 		<!--<a href="<?php echo base_url();?>index.php/alumnos/password/<?php echo $alumno->codigo_alumno ?>" class="btn btn-default">Password</a>
 		<a href="<?php echo base_url();?>index.php/alumnos/permisos/<?php echo $alumno->codigo_alumno;?>" class="btn btn-info">Permisos</a> -->
-		<a href="<?php echo base_url();?>index.php/alumnos/eliminar/<?php echo $alumno->codigo_alumno ?>" class="btn btn-danger">Eliminar</a>
+		<a href="<?php echo base_url();?>alumnos/eliminar/<?php echo $alumno->codigo_alumno ?>" class="btn btn-danger">Eliminar</a>
 <?php		
 		echo '</td>';
  		echo '<td>'.$alumno->codigo_alumno.'</td>';

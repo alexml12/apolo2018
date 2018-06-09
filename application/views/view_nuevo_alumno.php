@@ -102,7 +102,7 @@
 
 
 	$carrera = array(
-	'NONE'   => '---SELECCIONE LA CARRERA---',
+	'NONE'   => '---SELECCIONE LA ESCUELA---',
 	'ING DE SISTEMAS E INFORMATICA'=> 'ING DE SISTEMAS E INFORMATICA',
 	'ING CIVIL'      => 'ING CIVIL',
 	'ING AMBIENTAL R.N'      => 'ING AMBIENTAL R.N',
@@ -116,7 +116,7 @@
 
 	);
 	echo '<tr>';
-	echo '<td>'.form_label("carrera:",'carrera_profesional').'</td>';
+	echo '<td>'.form_label("Escuela:",'carrera_profesional').'</td>';
 	echo '<td>';
 	echo  form_dropdown('carrera_profesional', $carrera, set_value('carrera_profesional',@$datos_usuarios[0]->carrera_profesional));
 	echo '</td>';
