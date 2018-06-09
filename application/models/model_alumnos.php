@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class model_alumnos extends CI_Model {
 	public function ListarAlumnos(){
-		$this->db->order_by('codigo_alumno ASC');
+		$this->db->order_by('FECHA_REGISTRO DESC');
 		return $this->db->get('alumnos')->result();
 	}
 	public function ExisteEmail($email){

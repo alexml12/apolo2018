@@ -5,14 +5,14 @@ class model_asistencia extends CI_Model {
 		$this->db->select('a.*,asis.*');
     	$this->db->from('alumnos a');
     	$this->db->join('asistencia asis', 'a.codigo_alumno = asis.codigo_alumno');
-
+    	$this->db->order_by('asis.fecha_Registro DESC');
    		$aResult = $this->db->get();
-
     	if(!$aResult->num_rows() == 1)
     	{
         return false;
     	}
     	return $aResult->result_array();
+
 	}
 	public function ExisteEmail($email){
           $this->db->from('alumnos');
@@ -20,14 +20,11 @@ class model_asistencia extends CI_Model {
           return $this->db->count_all_results();
      }
 
-    public function ExisteCodAlumnoAsis($email){
-          $this->db->from('asistencia');
-          $this->db->where('codigo_alumno',$email);
-          return $this->db->count_all_results();
-     }
+
     public function SeRegistroHoy($codigo_alumno,$email){
           $this->db->from('asistencia');
-          $this->db->where('codigo_alumno',$codigo_alumno ,'fecha_Registro',$email);
+          $this->db->where('codigo_alumno',$codigo_alumno );
+          $this->db->where('fecha_Registro',$email);
           return $this->db->count_all_results();
      }
      public function Save($arrayCliente){
@@ -38,21 +35,21 @@ class model_asistencia extends CI_Model {
      }
 	 function BuscarID($id){
 
-		$query = $this->db->where('codigo_alumno',$id);
-		$query = $this->db->get('alumnos');
+		$query = $this->db->where('id_asistencia',$id);
+		$query = $this->db->get('asistencia');
 		return $query->result();
 		
 	}
 	function edit($data,$id){
 
-		$this->db->where('codigo_alumno',$id);
-		$this->db->update('alumnos',$data);
+		$this->db->where('id_asistencia',$id);
+		$this->db->update('asistencia',$data);
 		
 	}
 	function Eliminar($id){
 
-		$this->db->where('codigo_alumno',$id);
-		$this->db->delete('alumnos');
+		$this->db->where('id_asistencia',$id);
+		$this->db->delete('asistencia');
 		
 	}
 	function MenuCompleto(){
