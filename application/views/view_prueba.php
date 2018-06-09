@@ -2,7 +2,7 @@
 <script type="text/javascript">
             /*CLIENTES*/
             $(document).ready(function() {
-                $('#usuarios').dataTable( {
+                $('#alumnos').dataTable( {
                     // sDom: hace un espacio entre la tabla y los controles 
                 "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
         
@@ -11,7 +11,7 @@
 </script>
 
 <div id="container">
-	<h2 align="center">Catalogo de Usuarios</h2>
+	<h2 align="center">Catalogo de Alumnos</h2>
 	<?php
 if(isset($_GET['save'])){
 	echo '<div class="alert alert-success text-center">La Información  se Almaceno Correctamente</div>';
@@ -30,43 +30,44 @@ if(isset($_GET['permisos'])){
 	}
 ?>
 <center>
-<table id="usuarios" border="0" cellpadding="0" cellspacing="0" class="pretty">
+<table id="alumnos" border="0" cellpadding="0" cellspacing="0" class="pretty">
 <thead>
 <tr>
 <th>ACCION</th>
+<th>CODIGO</th>
+<th>DNI</th>
+<th>CORREO</th>
 <th>NOMBRE</th>
 <th>APELLIDOS</th>
-<th>EMAIL</th>
-<th>FECHA REGISTRO</th>
-<th>TIPO</th>
-<th>ESTATUS</th>
+<th>ESCUELA</th>
+<th>SEXO</th>
+<th>ESTADO</th>
 </tr>
 </thead>
 <tbody>
  <?php 
  $contador = 0;
- if(!empty($usuarios)){
- 	foreach($usuarios as $usuario){
+ if(!empty($alumnos)){
+ 	foreach($alumnos as $alumno){
  		echo '<tr>';
 		echo '<td>'
 ?>
-		<a href="<?php echo base_url();?>usuarios/editar/<?php echo $usuario->ID;?>/" class="btn btn-success">Editar</a>
-		<a href="<?php echo base_url();?>usuarios/password/<?php echo $usuario->ID ?>" class="btn btn-default">Password</a>
-		<a href="<?php echo base_url();?>usuarios/permisos/<?php echo $usuario->ID;?>" class="btn btn-info">Permisos</a>
-		<a href="<?php echo base_url();?>usuarios/eliminar/<?php echo $usuario->ID ?>" class="btn btn-danger">Eliminar</a>
+		<a href="<?php echo base_url();?>alumnos/editar/#/" class="btn btn-success">Editar</a>
+
 <?php		
 		echo '</td>';
- 		echo '<td>'.$usuario->NOMBRE.'</td>';
-		echo '<td>'.$usuario->APELLIDOS.'</td>';
-		echo '<td>'.$usuario->EMAIL.'</td>';
-		echo '<td>'.$usuario->FECHA_REGISTRO.'</td>';
-		echo '<td>'.$usuario->TIPO.'</td>';
- 			
- 			/*Si es estatus mostramos en texto*/
-			if($usuario->TIPO==0){
+ 		echo '<td>'.$alumno[codigo_alumno].'</td>';
+		echo '<td>'.$alumno->dni.'</td>';
+		echo '<td>'.$alumno->correo.'</td>';
+		echo '<td>'.$alumno->nombres.'</td>';
+		echo '<td>'.$alumno->apellidos.'</td>';
+ 		echo '<td>'.$alumno->carrera_profesional.'</td>';	
+ 		echo '<td>'.$alumno->sexo.'</td>';
+ 		 	/*Si es estatus mostramos en texto*/
+			if($alumno->estado==0){
 			echo '<td>Activo</td>';
 			}
-			if($usuario->TIPO==1){
+			if($alumno->estado==1){
 			echo '<td>Inactivo</td>';
 			}
  			
